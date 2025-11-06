@@ -37,7 +37,7 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterStatus, set
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by supplier, invoice number, or amount..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
             />
             {searchTerm && (
               <button
@@ -79,7 +79,7 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterStatus, set
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 >
                   <option value="all">All Status</option>
                   <option value="synced">Synced</option>
@@ -95,13 +95,13 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterStatus, set
                     type="date"
                     value={dateRange.start}
                     onChange={(e) => setDateRange({ ...dateRange, start: e.target.value })}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                   <input
                     type="date"
                     value={dateRange.end}
                     onChange={(e) => setDateRange({ ...dateRange, end: e.target.value })}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
               </div>
@@ -114,14 +114,14 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterStatus, set
                     value={amountRange.min}
                     onChange={(e) => setAmountRange({ ...amountRange, min: e.target.value })}
                     placeholder="Min"
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                   <input
                     type="number"
                     value={amountRange.max}
                     onChange={(e) => setAmountRange({ ...amountRange, max: e.target.value })}
                     placeholder="Max"
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function SearchBar({ searchTerm, setSearchTerm, filterStatus, set
               {activeFiltersCount > 0 && (
                 <button
                   onClick={handleClearFilters}
-                  className="text-sm text-blue-600 hover:text-blue-700"
+                  className="text-sm text-emerald-600 hover:text-emerald-700"
                 >
                   Clear all filters
                 </button>

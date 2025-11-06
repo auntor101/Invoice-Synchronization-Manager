@@ -39,8 +39,8 @@ export function useInvoiceData() {
       monthlyChange: 12,
       pendingReview: reviewCount,
       avgConfidence,
-      storageUsed: '6.2 MB',
-      cachedInvoices: invoices.filter(inv => inv.status === 'synced').length
+      budgetUsed: '6.54',
+      budgetRemaining: '8.46'
     };
   }, [invoices]);
 

@@ -24,11 +24,11 @@
 
 @layer components {
   .toggle {
-    @apply relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer;
+    @apply relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 cursor-pointer;
   }
 
   .toggle:checked {
-    @apply bg-blue-600;
+    @apply bg-emerald-600;
   }
 
   .toggle::after {

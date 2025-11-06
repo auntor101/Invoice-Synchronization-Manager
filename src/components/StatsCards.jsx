@@ -9,7 +9,7 @@ export default function StatsCards({ stats }) {
       change: stats.monthlyChange,
       icon: FileText,
       positive: true,
-      color: 'blue'
+      color: 'emerald'
     },
     {
       title: 'Pending Review',
@@ -27,17 +27,17 @@ export default function StatsCards({ stats }) {
       color: 'green'
     },
     {
-      title: 'Storage Used',
-      value: stats.storageUsed,
-      subtitle: `${stats.cachedInvoices} invoices cached`,
+      title: 'Budget Remaining',
+      value: `$${stats.budgetRemaining}`,
+      subtitle: `$${stats.budgetUsed} used of $15/month`,
       icon: Database,
-      color: 'purple'
+      color: 'emerald'
     }
   ];
 
   const getColorClasses = (color, isBackground = false) => {
     const colors = {
-      blue: isBackground ? 'bg-blue-100' : 'text-blue-600',
+      emerald: isBackground ? 'bg-emerald-100' : 'text-emerald-600',
       orange: isBackground ? 'bg-orange-100' : 'text-orange-600',
       green: isBackground ? 'bg-green-100' : 'text-green-600',
       purple: isBackground ? 'bg-purple-100' : 'text-purple-600',

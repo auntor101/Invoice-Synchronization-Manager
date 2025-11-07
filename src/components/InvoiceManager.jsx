@@ -4,18 +4,22 @@ import InvoiceTable from './InvoiceTable';
 import StatsCards from './StatsCards';
 import SearchBar from './SearchBar';
 import OfflineBanner from './OfflineBanner';
+import OfflineQueue from './OfflineQueue';
 import { useInvoiceData } from '../hooks/useInvoiceData';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
+import { useQueueManager } from '../hooks/useQueueManager';
 
 export default function InvoiceManager() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const isOnline = useNetworkStatus();
   const { invoices, pendingCount, stats, searchTerm, setSearchTerm, filterStatus, setFilterStatus, deleteInvoice, refreshData } = useInvoiceData();
+  const { queuedInvoices, updatePriority, syncQueue, removeFromQueue } = useQueueManager(invoices);
   const [showSettings, setShowSettings] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
   
   const handleSync = async () => {
     setIsSyncing(true);
+    await syncQueue();
     await refreshData();
     setTimeout(() => setIsSyncing(false), 1500);
   };
@@ -113,6 +117,15 @@ export default function InvoiceManager() {
             <span className="font-semibold text-lg">Upload File</span>
           </button>
         </div>
+
+        <OfflineQueue
+          queuedInvoices={queuedInvoices}
+          onUpdatePriority={updatePriority}
+          onSyncNow={handleSync}
+          onRemoveFromQueue={removeFromQueue}
+          isOnline={isOnline}
+          isSyncing={isSyncing}
+        />
 
         <SearchBar 
           searchTerm={searchTerm}
